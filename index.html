@@ -21,15 +21,23 @@
       <section id="home" class="setionHero">
         <!--
           Todo-appøication/Gjøremålsliste:
-          1. Lage elementene vi trenger i HTML: input og button og tekst-element
+          1. Lage elementene vi trenger i HTML: input og button og tekst-element 
             a. Tenk semantisk Form-element 
             b. Alle element på ha eget ID-navn
           2. Hent button-element til JS og sett opp hendelse lytter
             a. Bruke metoden addEventListner med anonym funksjon
           3. Hent resterende HTML-elementer inn i den anonyme funksjonen
             a. Husk å bruke .value for å hente verdi i elementet og ikke selve elementet
-          4. Retuner verdien i input-elementet synlig til nettsiden
-            a. Sjekk resultat i console før det retuneres til siden 
+          4. Lage er nytt HTML-element i JS som tar i mot input verdi
+            a. Bruke .createElement-metoden for å lage et li-element 
+            b. Bruk .textContent-metiden for å legge til input som innhold i li
+            c. Bruk .classList.add for å legge til en klasse som har styling fra CSS
+          5. Retuner nytt li-element til ul-elementet i HTML
+            a. Bruk .appendChild-metoden
+          6. Lag et button-element i JS og sett opp en hendelse lytter
+            a. Bruk .remove() på li-elementet den hører til
+          7. Retuner button-element til i li-elementet
+            a. Bruk .appendChild-metoden for å legge button i li
         -->
         <form action="">
           <label for="todoInput">
@@ -38,7 +46,7 @@
           </label>
           <button id="addTodo">Add til </button>
         </form>
-        <p id="todoDisplay"><!-- Får data fra JS--></p>
+        <ul id="todoDisplay"><!-- Får data fra JS--></ul>
       </section>
     </main>
   </body>
