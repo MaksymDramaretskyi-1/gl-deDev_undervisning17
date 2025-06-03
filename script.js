@@ -8,19 +8,6 @@ linjer
 // Kommentar for en linje
 console.log('Hello!');
 
-function checkInput (){
-  const input = document.getElementById("todoInput").value.trim();
-  const errorMsg = document.getElementById("errorMessage");
-
-  if(input === ""){
-    errorMsg.textContent = "Please, can you check";
-    
-   } else {
-    errorMsg.textContent = "";
-   }
-}
-
-
 
 /* Steg #1 
   Lager en variabel som lagrer at den henter et element fra HTML med id-navn addTodo 
@@ -31,22 +18,33 @@ console.log(addTodo);
 /**/
 addTodo.addEventListener("click", function (event) {
   event.preventDefault();
-  console.log("Button click?");
+
 
   /* */
   const todoInput = document.getElementById("todoInput");
-  console.log(todoInput);
-  const todoInputValue = todoInput.value;
-  console.log(todoInputValue);
+  const todoInputValue = todoInput.value.trim();
+  
+  if (todoInputValue === "") {
+    todoInput.value = ""; // очищает поле на всякий случай
+    todoInput.placeholder = "Please enter a task!";
+    todoInput.classList.add("inputError"); // (опционально: красная рамка)
+    setTimeout(() => {
+      todoInput.placeholder = "Skriv et gjøremål";
+      todoInput.classList.remove("inputError");
+    }, 2000);
+    
+    return;
+  } else {
+    todoInput.placeholder = "Skriv et gjøremål"; // вернуть оригинальный
+    todoInput.classList.remove("inputError");
+  }
+  
 
-  /*
-  Opprett en «li»-tag, vis den deretter i console.log(), og vis den på siden 
-  */
+
   const div = document.createElement("div");
   div.className = "divStyle"
   
   const todoItem = document.createElement("li");
-
   console.log(todoItem);
   todoItem.textContent = todoInputValue;
   todoItem.className = "todoItem"

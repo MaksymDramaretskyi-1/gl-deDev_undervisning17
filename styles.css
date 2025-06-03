@@ -48,11 +48,12 @@ h1 {
 
 .stylesForm {
   padding: 90px;
-  background-color: #FCFCFC;
+  background-color: #ebebeb;
   text-align: center;
   border-radius: 8px;
   max-width: 800px;
   margin: auto;
+  box-shadow: 0 2px 6px rgba(20, 20, 20, 0.1);
 }
 
 .stylesForm h2 {
@@ -103,20 +104,23 @@ input:focus {
 
 .listBtnDelete, .listBtnDone {
   background-color: white;
-  border: 2px solid #ccc;
   padding: 8px;
   border-radius: 6px;
   margin-left: auto;
   cursor: pointer;
+  border: 2px solid transparent;
   transition: border-color 0.3s ease;
 }
 
 .listBtnDelete:hover {
   border: 2px solid #FF6262;
+  transition: border-color 0.3s ease;
 }
 
 .listBtnDone:hover {
+  transition: border-color 0.3s ease;
   border: 2px solid #05FF00;
+
 }
 
 ul {
@@ -131,16 +135,15 @@ li {
   justify-content: space-between;
   align-items: center;
   padding: 20px 20px;
-  border: 2px solid rgb(240, 237, 237);
+  border: 2px solid transparent;
   border-radius: 4px;
   list-style-type: none;
   cursor: pointer;
   background-color: #FFFFFF;
-  transition: border-color 0.3s ease;
   margin-bottom: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.5s ease; /* плавная анимация */
 }
+
 .todoItem {
   transition: background-color 0.5s ease;
 }
@@ -151,7 +154,8 @@ li {
 
 
 li:hover {
-  border: 2px solid blue;
+  transition: border-color 0.5s ease-in-out;
+  border-color: blue;
 }
 
 li:last-child {
@@ -167,5 +171,9 @@ img {
 .divStyle {
   display: flex;
   gap: 10px;
+}
+
+.inputError {
+  border: 2px solid red;
 }
 
