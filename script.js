@@ -8,6 +8,18 @@ linjer
 // Kommentar for en linje
 console.log('Hello!');
 
+function checkInput (){
+  const input = document.getElementById("todoInput").value.trim();
+  const errorMsg = document.getElementById("errorMessage");
+
+  if(input === ""){
+    errorMsg.textContent = "Please, can you check";
+    
+   } else {
+    errorMsg.textContent = "";
+   }
+}
+
 
 
 /* Steg #1 
@@ -30,24 +42,55 @@ addTodo.addEventListener("click", function (event) {
   /*
   Opprett en «li»-tag, vis den deretter i console.log(), og vis den på siden 
   */
+  const div = document.createElement("div");
+  div.className = "divStyle"
+  
   const todoItem = document.createElement("li");
+
   console.log(todoItem);
   todoItem.textContent = todoInputValue;
+  todoItem.className = "todoItem"
+  todoItem.appendChild(div)
 
   /* */
   const deleteTodo = document.createElement("button");
-  // deleteTodo.textContent = "Slett";
-  deleteTodo.className = "listBtnDelete";
   const img = document.createElement("img");
+
+  deleteTodo.className = "listBtnDelete";
   img.src = "images/trash.png";
-  img.alt = " trash";
+  img.alt = "img-trash";
 
   deleteTodo.appendChild(img);
 
 
-  deleteTodo.addEventListener("click", function () {
-    todoItem.remove();
+  deleteTodo.addEventListener("click", function (deleteTodo) {
+    if (todoItem.classList.contains("done")) {
+      todoItem.remove();
+      
+    } else {
 
+      todoItem.classList.add("warning");
+
+      setTimeout(() => {
+        todoItem.classList.remove("warning");
+      }, 1000);
+      
+      alert("First mark the task as completed!!");
+    }
+  });
+  
+
+  const doneTodo = document.createElement("button");
+  const imgCheck = document.createElement("img");
+
+  doneTodo.className = "listBtnDone";
+  imgCheck.src = "images/check-circle.png"
+  imgCheck.alt = "img-check-circle"
+
+  doneTodo.appendChild(imgCheck);
+
+  doneTodo.addEventListener("click", function () {
+    todoItem.classList.toggle("done"); // Toggles the "done" class
   });
 
    /* */
@@ -55,8 +98,12 @@ addTodo.addEventListener("click", function (event) {
   console.log(todoDisplay);
 
   /* */
-  todoItem.appendChild(deleteTodo);
+  div.appendChild(doneTodo);// "Done" button
+  div.appendChild(deleteTodo);// "Delete" button
+  // todoItem.appendChild(doneTodo);// "Done" button
+  // todoItem.appendChild(deleteTodo);// "Delete" button
   todoDisplay.appendChild(todoItem);
 
+  todoInput.value = "";
 
 });

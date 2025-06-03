@@ -101,7 +101,7 @@ input:focus {
   transition: border-color 0.3s ease;
 }
 
-.listBtnDelete {
+.listBtnDelete, .listBtnDone {
   background-color: white;
   border: 2px solid #ccc;
   padding: 8px;
@@ -112,7 +112,11 @@ input:focus {
 }
 
 .listBtnDelete:hover {
-  border:2px solid red;
+  border: 2px solid #FF6262;
+}
+
+.listBtnDone:hover {
+  border: 2px solid #05FF00;
 }
 
 ul {
@@ -135,7 +139,16 @@ li {
   transition: border-color 0.3s ease;
   margin-bottom: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease; /* плавная анимация */
 }
+.todoItem {
+  transition: background-color 0.5s ease;
+}
+
+.todoItem.warning {
+  background-color: #FF6262;
+}
+
 
 li:hover {
   border: 2px solid blue;
@@ -150,3 +163,9 @@ img {
   width: 20px;
   height: 20px;
 }
+
+.divStyle {
+  display: flex;
+  gap: 10px;
+}
+
