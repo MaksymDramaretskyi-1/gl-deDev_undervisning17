@@ -36,7 +36,15 @@ addTodo.addEventListener("click", function (event) {
 
   /* */
   const deleteTodo = document.createElement("button");
-  deleteTodo.textContent = "Slett";
+  // deleteTodo.textContent = "Slett";
+  deleteTodo.className = "listBtnDelete";
+  const img = document.createElement("img");
+  img.src = "images/trash.png";
+  img.alt = " trash";
+
+  deleteTodo.appendChild(img);
+
+
   deleteTodo.addEventListener("click", function () {
     todoItem.remove();
 
