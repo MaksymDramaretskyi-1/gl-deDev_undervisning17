@@ -45,135 +45,150 @@ h1 {
   font-weight: bold;
   font-size: 1.5rem;
 }
+@media (min-width: 375px) {
 
-.stylesForm {
-  padding: 90px;
-  background-color: #ebebeb;
-  text-align: center;
-  border-radius: 8px;
-  max-width: 800px;
-  margin: auto;
-  box-shadow: 0 2px 6px rgba(20, 20, 20, 0.1);
+  .stylesForm {
+    padding: 50px;
+    background-color: #ebebeb;
+    text-align: center;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 2px 6px rgba(20, 20, 20, 0.1);
+  }
+
+  .stylesForm h2 {
+    font-size: 18px;
+    background: linear-gradient(to left,#CC00FF, #5756FF, #07FDFD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  form {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    max-width: 600px;
+    margin-bottom: 50px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 0px solid white;
+  }
+
+  label {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border-radius: 10px 0px 0px 10px;
+    border: 2px solid white;
+    transition: border-color 0.3s ease;
+  }
+
+  input:focus {
+    border-color: #007bff; 
+    outline: none;
+  }
+
+  .btn-seve {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    background: linear-gradient(to right,#07FDFD, #5756FF);
+    border: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .listBtnDelete, .listBtnDone {
+    background-color: white;
+    padding: 8px;
+    border-radius: 6px;
+    margin-left: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .listBtnDelete:hover {
+    border: 2px solid #FF6262;
+    transition: border-color 0.3s ease;
+  }
+
+  .listBtnDone:hover {
+    transition: border-color 0.3s ease;
+    border: 2px solid #05FF00;
+  }
+
+  ul {
+    text-align: center;
+    list-style: none;
+    padding-left: 0;
+    max-width: 687px;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    list-style-type: none;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .todoItem {
+    transition: background-color 0.5s ease;
+  }
+
+  .todoItem.warning {
+    background-color: #FF6262;
+  }
+
+
+  li:hover {
+    transition: border-color 0.5s ease-in-out;
+    border-color: blue;
+  }
+
+  li:last-child {
+    margin-bottom: 0px;
+  }
+
+  img {
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+  }
+
+  .divStyle {
+    display: flex;
+    gap: 10px;
+  }
+
+  .inputError {
+    border: 2px solid red;
+  }
+
+  .active {
+    background-color: white;
+    padding: 8px;
+    border-radius: 6px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    border: 2px solid #05FF00;
+  }
+
+
 }
 
-.stylesForm h2 {
-  background: linear-gradient(to left,#CC00FF, #5756FF, #07FDFD);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-form {
-  display: flex;
-  align-items: center;
-  justify-content:space-between;
-  max-width: 600px;
-  margin-bottom: 50px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px 0px 0px 10px;
-  border: 0px solid white;
-}
-
-label {
-  width: 100%;
-}
-
-input {
-  width: 100%;
-  border-radius: 10px;
-  padding: 18px 20px;
-  border-radius: 10px 0px 0px 10px;
-  border: 2px solid white;
-  transition: border-color 0.3s ease;
-}
-
-input:focus {
-  border-color: #007bff; 
-  outline: none;
-}
-
-.btn-seve {
-  padding: 16px 25px;
-  border-radius: 0px 10px 10px 0px;
-  cursor: pointer;
-  font-size: 20px;
-  color: white;
-  background: linear-gradient(to right,#07FDFD, #5756FF);
-  border: none;
-  transition: border-color 0.3s ease;
-}
-
-.listBtnDelete, .listBtnDone {
-  background-color: white;
-  padding: 8px;
-  border-radius: 6px;
-  margin-left: auto;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: border-color 0.3s ease;
-}
-
-.listBtnDelete:hover {
-  border: 2px solid #FF6262;
-  transition: border-color 0.3s ease;
-}
-
-.listBtnDone:hover {
-  transition: border-color 0.3s ease;
-  border: 2px solid #05FF00;
-
-}
-
-ul {
-  text-align: center;
-  list-style: none;
-  padding-left: 0;
-  max-width: 687px;
-}
-
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 20px;
-  border: 2px solid transparent;
-  border-radius: 4px;
-  list-style-type: none;
-  cursor: pointer;
-  background-color: #FFFFFF;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.todoItem {
-  transition: background-color 0.5s ease;
-}
-
-.todoItem.warning {
-  background-color: #FF6262;
-}
-
-
-li:hover {
-  transition: border-color 0.5s ease-in-out;
-  border-color: blue;
-}
-
-li:last-child {
-  margin-bottom: 0px;
-}
-
-img {
-  vertical-align: middle;
-  width: 20px;
-  height: 20px;
-}
-
-.divStyle {
-  display: flex;
-  gap: 10px;
-}
-
-.inputError {
-  border: 2px solid red;
-}
 
